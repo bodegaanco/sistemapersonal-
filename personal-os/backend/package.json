@@ -1,0 +1,23 @@
+{
+  "name": "personal-os-backend",
+  "version": "1.0.0",
+  "description": "Backend de Personal OS - centro de organización personal",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node --experimental-sqlite server.js",
+    "dev": "node --experimental-sqlite --watch server.js"
+  },
+  "engines": {
+    "node": ">=22.5.0"
+  },
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.5",
+    "exceljs": "^4.4.0",
+    "express": "^4.19.2",
+    "jsonwebtoken": "^9.0.3",
+    "morgan": "^1.10.0"
+  }
+}
