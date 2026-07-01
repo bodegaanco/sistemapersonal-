@@ -2,7 +2,8 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import {
   CheckSquare, ListTodo, Flame, Dumbbell, Trophy,
-  Wallet, Target, CalendarDays, Clock3,
+  Wallet, Target, CalendarDays, Clock3, BookOpen, BarChart3,
+  ShoppingCart, UtensilsCrossed,
 } from 'lucide-react';
 import api from '../api/client';
 import Card from '../components/Card';
@@ -19,6 +20,10 @@ const MODULOS = [
   { to: '/calendario', label: 'Calendario', icon: CalendarDays },
   { to: '/horario', label: 'Horario semanal', icon: Clock3 },
   { to: '/tareas', label: 'Tareas del día', icon: ListTodo, key: 'tasks' },
+  { to: '/diario', label: 'Diario', icon: BookOpen },
+  { to: '/estadisticas', label: 'Estadísticas', icon: BarChart3 },
+  { to: '/compras', label: 'Compras', icon: ShoppingCart },
+  { to: '/comidas', label: 'Comidas semanales', icon: UtensilsCrossed },
 ];
 
 export default function Dashboard() {

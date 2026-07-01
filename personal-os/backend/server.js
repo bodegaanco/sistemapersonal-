@@ -18,6 +18,13 @@ import calendarRouter from './routes/calendar.js';
 import scheduleRouter from './routes/schedule.js';
 import financeRouter from './routes/finance.js';
 import goalsRouter from './routes/goals.js';
+import journalRouter from './routes/journal.js';
+import statsRouter from './routes/stats.js';
+import backupRouter from './routes/backup.js';
+import searchRouter from './routes/search.js';
+import exportRouter from './routes/export.js';
+import shoppingRouter from './routes/shopping.js';
+import mealsRouter from './routes/meals.js';
 import { requireAuth } from './middleware/auth.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -26,7 +33,7 @@ const PORT = process.env.PORT || 4000;
 const NODE_ENV = process.env.NODE_ENV || 'development';
 
 app.use(cookieParser());
-app.use(express.json());
+app.use(express.json({ limit: '20mb' }));
 app.use(morgan('dev'));
 
 // En desarrollo el frontend corre en otro puerto (Vite, :5173), así que
@@ -59,6 +66,13 @@ app.use('/api/calendar', requireAuth, calendarRouter);
 app.use('/api/schedule', requireAuth, scheduleRouter);
 app.use('/api/finance', requireAuth, financeRouter);
 app.use('/api/goals', requireAuth, goalsRouter);
+app.use('/api/journal', requireAuth, journalRouter);
+app.use('/api/stats', requireAuth, statsRouter);
+app.use('/api/backup', requireAuth, backupRouter);
+app.use('/api/search', requireAuth, searchRouter);
+app.use('/api/export', requireAuth, exportRouter);
+app.use('/api/shopping', requireAuth, shoppingRouter);
+app.use('/api/meals', requireAuth, mealsRouter);
 
 // En producción, Express también sirve el frontend ya compilado
 // (frontend/dist), para que todo corra como un solo servicio — ideal

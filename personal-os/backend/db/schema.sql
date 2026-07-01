@@ -225,6 +225,31 @@ CREATE TABLE IF NOT EXISTS journal_entries (
 );
 
 -- ---------------------------------------------------------
+-- LISTA DE COMPRAS
+-- ---------------------------------------------------------
+CREATE TABLE IF NOT EXISTS shopping_items (
+  id          INTEGER PRIMARY KEY AUTOINCREMENT,
+  name        TEXT NOT NULL,
+  quantity    TEXT,                        -- texto libre, ej: "2", "500g"
+  category    TEXT NOT NULL DEFAULT 'Otros', -- ej: Frutas y verduras, Lácteos...
+  checked     INTEGER NOT NULL DEFAULT 0,
+  created_at  TEXT NOT NULL DEFAULT (datetime('now'))
+);
+
+-- ---------------------------------------------------------
+-- COMIDAS SEMANALES
+-- ---------------------------------------------------------
+CREATE TABLE IF NOT EXISTS meals (
+  id            INTEGER PRIMARY KEY AUTOINCREMENT,
+  weekday       INTEGER NOT NULL,  -- 0=Lunes ... 6=Domingo
+  meal_type     TEXT NOT NULL,     -- desayuno | almuerzo | cena | snack
+  title         TEXT NOT NULL,
+  ingredients   TEXT,              -- uno por línea, para mandar a la lista de compras
+  created_at    TEXT NOT NULL DEFAULT (datetime('now')),
+  updated_at    TEXT NOT NULL DEFAULT (datetime('now'))
+);
+
+-- ---------------------------------------------------------
 -- ÍNDICES
 -- ---------------------------------------------------------
 CREATE INDEX IF NOT EXISTS idx_checklist_logs_date ON checklist_logs(date);

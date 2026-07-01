@@ -11,9 +11,13 @@ import CalendarPage from './pages/Calendar';
 import Schedule from './pages/Schedule';
 import Finance from './pages/Finance';
 import Goals from './pages/Goals';
+import Journal from './pages/Journal';
+import Stats from './pages/Stats';
+import Shopping from './pages/Shopping';
+import Meals from './pages/Meals';
 import Settings from './pages/Settings';
-import ComingSoon from './pages/ComingSoon';
 import Login from './pages/Login';
+import GlobalSearch from './components/GlobalSearch';
 import api from './api/client';
 
 export default function App() {
@@ -25,6 +29,13 @@ export default function App() {
       .then((d) => setAuthState(d.authenticated ? 'in' : 'out'))
       .catch(() => setAuthState('out'));
   }, []);
+
+  useEffect(() => {
+    if (authState !== 'in') return;
+    api.get('/settings').then((s) => {
+      document.documentElement.setAttribute('data-theme', s.theme === 'light' ? 'light' : 'dark');
+    }).catch(() => {});
+  }, [authState]);
 
   if (authState === 'checking') {
     return <div className="h-screen w-screen bg-[var(--color-bg)]" />;
@@ -50,10 +61,14 @@ export default function App() {
             <Route path="/horario" element={<Schedule />} />
             <Route path="/finanzas" element={<Finance />} />
             <Route path="/objetivos" element={<Goals />} />
-            <Route path="/diario" element={<ComingSoon title="Diario" />} />
+            <Route path="/diario" element={<Journal />} />
+            <Route path="/estadisticas" element={<Stats />} />
+            <Route path="/compras" element={<Shopping />} />
+            <Route path="/comidas" element={<Meals />} />
             <Route path="/ajustes" element={<Settings />} />
           </Routes>
         </main>
+        <GlobalSearch />
       </div>
     </HashRouter>
   );

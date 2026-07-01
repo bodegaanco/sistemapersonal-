@@ -146,4 +146,27 @@ if (process.env.APP_PASSWORD) {
   );
 }
 
+// ---------------------------------------------------------
+// RESPALDO AUTOMÁTICO
+// ---------------------------------------------------------
+// Cada vez que arranca el servidor, se genera una copia consistente de la
+// base de datos (usando VACUUM INTO, seguro incluso con la app en uso) y
+// se conservan solo los últimos 7 respaldos.
+try {
+  const backupsDir = path.join(DATA_DIR, 'backups');
+  if (!fs.existsSync(backupsDir)) fs.mkdirSync(backupsDir, { recursive: true });
+
+  const stamp = new Date().toISOString().replace(/[:.]/g, '-');
+  const backupPath = path.join(backupsDir, `personal-os-${stamp}.db`);
+  rawDb.exec(`VACUUM INTO '${backupPath.replace(/'/g, "''")}';`);
+
+  const files = fs.readdirSync(backupsDir)
+    .filter((f) => f.endsWith('.db'))
+    .sort()
+    .reverse();
+  files.slice(7).forEach((f) => fs.unlinkSync(path.join(backupsDir, f)));
+} catch (err) {
+  console.warn('⚠️  No se pudo generar el respaldo automático:', err.message);
+}
+
 export default db;

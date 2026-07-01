@@ -215,13 +215,44 @@ en una sola entrega).
   límite; aportar (o retirar) dinero a una meta; barra de progreso con
   porcentaje; se marca como cumplida automáticamente al alcanzar el monto
 
-**🔜 Próximas etapas**
-1. Registro diario (diario personal con ánimo/energía/productividad)
-2. Dashboard de estadísticas con gráficos interactivos
-3. Exportación automática a Excel (.xlsx) con todas las hojas
-4. Ajustes avanzados: tema claro/oscuro, importar/exportar datos, respaldos
-   automáticos, gestión de tareas fijas del checklist, atajos de teclado,
-   buscador global
+**✅ Etapa 5 — Completa (proyecto terminado)**
+- **Registro diario**: entrada por día con "¿cómo estuvo mi día?", "¿qué
+  hice bien?", "¿qué puedo mejorar?", y sliders de ánimo/energía/
+  productividad; historial navegable por fecha
+- **Dashboard de estadísticas**: racha activa más larga, tareas
+  completadas, entrenamientos y goles de los últimos 30 días, objetivos
+  cumplidos, saldo del mes, y un gráfico de cumplimiento diario (checklist
+  vs. hábitos) de los últimos 14 días
+- **Exportación a Excel (.xlsx)** con las 7 hojas solicitadas: Ingresos,
+  Gastos, Resumen financiero (con fórmulas automáticas), Objetivos de
+  ahorro (con % de avance), Entrenamientos, Hábitos y Calendario semanal
+- **Tema claro/oscuro**, cambiable desde Ajustes
+- **Exportar/importar todos los datos** en un archivo `.json` de respaldo
+  completo, desde Ajustes
+- **Respaldos automáticos**: cada vez que arranca el servidor se genera una
+  copia de la base de datos (se conservan las últimas 7)
+- **Buscador global** (`Cmd/Ctrl + K` o el botón "Buscar" en el menú)
+  que busca en tareas, checklist, hábitos, gym, calendario, finanzas y
+  objetivos a la vez
+- Gestión de tareas fijas del checklist: ya estaba disponible desde la
+  Etapa 1, directamente en la pantalla de Checklist diario
+
+## Todos los módulos del proyecto original están completos:
+Agenda/Calendario, Checklist, Registro diario, Hábitos, Rutinas/Horario,
+Gym, Fútbol, Finanzas personales, Objetivos, Estadísticas y Exportación a
+Excel — todo integrado en una sola aplicación, con login y lista para
+producción (Railway).
+
+**✅ Etapa 6 — Compras y Comidas semanales**
+- **Compras**: lista de supermercado agrupada por categoría (Frutas y
+  verduras, Carnes, Lácteos, Limpieza, etc.), marcar como comprado, limpiar
+  los ya comprados de un clic
+- **Comidas semanales**: planificador con Desayuno/Almuerzo/Cena/Snack para
+  cada día de la semana, con ingredientes; botón para mandar los
+  ingredientes de una comida directo a la lista de Compras
+- Ambos módulos están incluidos en el buscador global, el respaldo
+  (exportar/importar) y la exportación a Excel (2 hojas nuevas: "Compras"
+  y "Comidas semanales", con 9 hojas en total)
 
 ## Notas de la base de datos
 

@@ -1,7 +1,8 @@
 import { NavLink } from 'react-router-dom';
 import {
   LayoutGrid, CheckSquare, ListTodo, Flame, Dumbbell,
-  Trophy, CalendarDays, Clock3, Wallet, Target, BookOpen, Settings, LogOut,
+  Trophy, CalendarDays, Clock3, Wallet, Target, BookOpen, BarChart3, Settings, LogOut, Search,
+  ShoppingCart, UtensilsCrossed,
 } from 'lucide-react';
 import api from '../api/client';
 
@@ -16,7 +17,10 @@ const NAV_ITEMS = [
   { to: '/horario', label: 'Horario semanal', icon: Clock3 },
   { to: '/finanzas', label: 'Finanzas', icon: Wallet },
   { to: '/objetivos', label: 'Objetivos', icon: Target },
-  { to: '/diario', label: 'Diario', icon: BookOpen, soon: true },
+  { to: '/compras', label: 'Compras', icon: ShoppingCart },
+  { to: '/comidas', label: 'Comidas semanales', icon: UtensilsCrossed },
+  { to: '/diario', label: 'Diario', icon: BookOpen },
+  { to: '/estadisticas', label: 'Estadísticas', icon: BarChart3 },
 ];
 
 export default function Sidebar({ onLogout }) {
@@ -33,6 +37,16 @@ export default function Sidebar({ onLogout }) {
         </div>
         <span className="hidden md:inline font-semibold tracking-tight text-[15px]">Personal OS</span>
       </div>
+
+      <button
+        onClick={() => window.__openGlobalSearch?.()}
+        title="Buscar (Ctrl/Cmd + K)"
+        className="flex items-center justify-center md:justify-start gap-3 px-2 md:px-3 py-2 mb-3 rounded-lg text-sm text-[var(--color-text-muted)] hover:bg-[var(--color-surface)] hover:text-[var(--color-text)] transition-colors border border-[var(--color-border)]"
+      >
+        <Search size={17} strokeWidth={1.8} className="shrink-0" />
+        <span className="hidden md:flex flex-1">Buscar</span>
+        <span className="hidden md:inline text-[10px] text-[var(--color-text-dim)] font-mono">⌘K</span>
+      </button>
 
       <nav className="flex flex-col gap-0.5 flex-1">
         {NAV_ITEMS.map(({ to, label, icon: Icon, end, soon }) => (
