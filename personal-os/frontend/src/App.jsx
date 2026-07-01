@@ -5,6 +5,12 @@ import Dashboard from './pages/Dashboard';
 import Checklist from './pages/Checklist';
 import Tasks from './pages/Tasks';
 import Habits from './pages/Habits';
+import Gym from './pages/Gym';
+import Futbol from './pages/Futbol';
+import CalendarPage from './pages/Calendar';
+import Schedule from './pages/Schedule';
+import Finance from './pages/Finance';
+import Goals from './pages/Goals';
 import Settings from './pages/Settings';
 import ComingSoon from './pages/ComingSoon';
 import Login from './pages/Login';
@@ -38,11 +44,12 @@ export default function App() {
             <Route path="/checklist" element={<Checklist />} />
             <Route path="/tareas" element={<Tasks />} />
             <Route path="/habitos" element={<Habits />} />
-            <Route path="/gym" element={<ComingSoon title="Gym" />} />
-            <Route path="/futbol" element={<ComingSoon title="Fútbol" />} />
-            <Route path="/calendario" element={<ComingSoon title="Calendario" />} />
-            <Route path="/finanzas" element={<ComingSoon title="Finanzas" />} />
-            <Route path="/objetivos" element={<ComingSoon title="Objetivos" />} />
+            <Route path="/gym" element={<Gym />} />
+            <Route path="/futbol" element={<Futbol />} />
+            <Route path="/calendario" element={<CalendarPage />} />
+            <Route path="/horario" element={<Schedule />} />
+            <Route path="/finanzas" element={<Finance />} />
+            <Route path="/objetivos" element={<Goals />} />
             <Route path="/diario" element={<ComingSoon title="Diario" />} />
             <Route path="/ajustes" element={<Settings />} />
           </Routes>

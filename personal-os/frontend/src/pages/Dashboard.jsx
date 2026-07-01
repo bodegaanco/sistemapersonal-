@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import {
   CheckSquare, ListTodo, Flame, Dumbbell, Trophy,
-  Wallet, Target, CalendarDays,
+  Wallet, Target, CalendarDays, Clock3,
 } from 'lucide-react';
 import api from '../api/client';
 import Card from '../components/Card';
@@ -12,11 +12,12 @@ import { fechaLarga, horaActual, saludo } from '../utils/dates';
 const MODULOS = [
   { to: '/checklist', label: 'Tareas pendientes', icon: CheckSquare, key: 'checklist' },
   { to: '/habitos', label: 'Hábitos', icon: Flame, key: 'habits' },
-  { to: '/gym', label: 'Gym', icon: Dumbbell, soon: true },
-  { to: '/futbol', label: 'Fútbol', icon: Trophy, soon: true },
-  { to: '/finanzas', label: 'Finanzas', icon: Wallet, soon: true },
-  { to: '/objetivos', label: 'Objetivos', icon: Target, soon: true },
-  { to: '/calendario', label: 'Calendario', icon: CalendarDays, soon: true },
+  { to: '/gym', label: 'Gym', icon: Dumbbell },
+  { to: '/futbol', label: 'Fútbol', icon: Trophy },
+  { to: '/finanzas', label: 'Finanzas', icon: Wallet },
+  { to: '/objetivos', label: 'Objetivos', icon: Target },
+  { to: '/calendario', label: 'Calendario', icon: CalendarDays },
+  { to: '/horario', label: 'Horario semanal', icon: Clock3 },
   { to: '/tareas', label: 'Tareas del día', icon: ListTodo, key: 'tasks' },
 ];
 

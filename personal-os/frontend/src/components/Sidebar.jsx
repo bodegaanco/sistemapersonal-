@@ -1,7 +1,7 @@
 import { NavLink } from 'react-router-dom';
 import {
   LayoutGrid, CheckSquare, ListTodo, Flame, Dumbbell,
-  Trophy, CalendarDays, Wallet, Target, BookOpen, Settings, LogOut,
+  Trophy, CalendarDays, Clock3, Wallet, Target, BookOpen, Settings, LogOut,
 } from 'lucide-react';
 import api from '../api/client';
 
@@ -10,11 +10,12 @@ const NAV_ITEMS = [
   { to: '/checklist', label: 'Checklist diario', icon: CheckSquare },
   { to: '/tareas', label: 'Tareas', icon: ListTodo },
   { to: '/habitos', label: 'Hábitos', icon: Flame },
-  { to: '/gym', label: 'Gym', icon: Dumbbell, soon: true },
-  { to: '/futbol', label: 'Fútbol', icon: Trophy, soon: true },
-  { to: '/calendario', label: 'Calendario', icon: CalendarDays, soon: true },
-  { to: '/finanzas', label: 'Finanzas', icon: Wallet, soon: true },
-  { to: '/objetivos', label: 'Objetivos', icon: Target, soon: true },
+  { to: '/gym', label: 'Gym', icon: Dumbbell },
+  { to: '/futbol', label: 'Fútbol', icon: Trophy },
+  { to: '/calendario', label: 'Calendario', icon: CalendarDays },
+  { to: '/horario', label: 'Horario semanal', icon: Clock3 },
+  { to: '/finanzas', label: 'Finanzas', icon: Wallet },
+  { to: '/objetivos', label: 'Objetivos', icon: Target },
   { to: '/diario', label: 'Diario', icon: BookOpen, soon: true },
 ];
 

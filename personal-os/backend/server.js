@@ -12,6 +12,12 @@ import tasksRouter from './routes/tasks.js';
 import habitsRouter from './routes/habits.js';
 import settingsRouter from './routes/settings.js';
 import dashboardRouter from './routes/dashboard.js';
+import gymRouter from './routes/gym.js';
+import futbolRouter from './routes/futbol.js';
+import calendarRouter from './routes/calendar.js';
+import scheduleRouter from './routes/schedule.js';
+import financeRouter from './routes/finance.js';
+import goalsRouter from './routes/goals.js';
 import { requireAuth } from './middleware/auth.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -47,6 +53,12 @@ app.use('/api/tasks', requireAuth, tasksRouter);
 app.use('/api/habits', requireAuth, habitsRouter);
 app.use('/api/settings', requireAuth, settingsRouter);
 app.use('/api/dashboard', requireAuth, dashboardRouter);
+app.use('/api/gym', requireAuth, gymRouter);
+app.use('/api/futbol', requireAuth, futbolRouter);
+app.use('/api/calendar', requireAuth, calendarRouter);
+app.use('/api/schedule', requireAuth, scheduleRouter);
+app.use('/api/finance', requireAuth, financeRouter);
+app.use('/api/goals', requireAuth, goalsRouter);
 
 // En producción, Express también sirve el frontend ya compilado
 // (frontend/dist), para que todo corra como un solo servicio — ideal

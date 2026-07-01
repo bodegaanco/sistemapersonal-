@@ -123,7 +123,7 @@ CORS ni con dos despliegues separados.
    en `APP_PASSWORD`, y listo.
 
 ### Actualizar la app más adelante
-  
+
 Cada `git push` a la rama conectada hace que Railway reconstruya y
 redespliegue automáticamente. Tus datos no se pierden porque viven en el
 volumen, no en el contenedor.
@@ -172,7 +172,7 @@ Este proyecto se está construyendo por etapas para garantizar que cada parte
 quede sólida y completamente funcional (un proyecto de esta magnitud no cabe
 en una sola entrega).
 
-**✅ Etapa 1 — Completa (esta entrega)**
+**✅ Etapa 1 — Completa**
 - Arquitectura completa del proyecto (frontend + backend + base de datos)
 - Base de datos con el esquema completo de **todos** los módulos (ya
   preparada para las siguientes etapas, con relaciones correctas)
@@ -187,19 +187,39 @@ en una sola entrega).
   mover de día, marcar completadas, filtros
 - **Hábitos** completos: crear, eliminar, marcar el día, racha actual,
   racha máxima, porcentaje de cumplimiento (30 días)
-- Ajustes básicos (nombre de usuario)
+- Ajustes básicos (nombre de usuario, cambio de contraseña)
+
+**✅ Etapa 2 — Completa**
+- **Gym**: rutina semanal configurable (un nombre de rutina por día, ej.
+  Lunes → Pecho), registro de entrenamientos con múltiples ejercicios
+  (series, repeticiones, peso, notas), historial completo, autocompletado
+  de nombres de ejercicios ya usados, y gráfico de progreso de peso por
+  ejercicio en el tiempo
+- **Fútbol**: registro de partidos y entrenamientos (posición, minutos,
+  goles, asistencias, estado físico, cómo me sentí, observaciones),
+  estadísticas acumuladas (partidos, goles, asistencias, minutos) y filtros
+
+**✅ Etapa 3 — Completa**
+- **Calendario**: vistas mensual, semanal y diaria; crear, mover y eliminar
+  eventos; eventos de todo el día; repeticiones (diaria, semanal, mensual)
+  con expansión automática de ocurrencias en cada vista; colores por evento
+- **Horario semanal fijo**: bloques de horario por día (Lunes a Domingo)
+  con hora de inicio/fin, título y color, totalmente editable
+
+**✅ Etapa 4 — Completa**
+- **Finanzas personales**: registrar ingresos, gastos y transferencias, con
+  categorías (editables y creables al vuelo); saldo calculado
+  automáticamente para hoy, esta semana, este mes y este año; desglose de
+  gastos por categoría del mes; filtros por tipo y buscador
+- **Objetivos de ahorro**: crear metas con monto objetivo, ícono y fecha
+  límite; aportar (o retirar) dinero a una meta; barra de progreso con
+  porcentaje; se marca como cumplida automáticamente al alcanzar el monto
 
 **🔜 Próximas etapas**
-1. Módulo de Gym (rutinas por día, series/repeticiones/peso, progreso)
-2. Módulo de Fútbol (partidos, entrenamientos, estadísticas)
-3. Calendario (vista mensual/semanal/diaria, eventos, recordatorios) +
-   Horario semanal fijo
-4. Finanzas personales (ingresos, gastos, categorías, saldo, gráficos)
-5. Objetivos/metas con barra de progreso
-6. Registro diario (diario personal con ánimo/energía/productividad)
-7. Dashboard de estadísticas con gráficos interactivos
-8. Exportación automática a Excel (.xlsx) con todas las hojas
-9. Ajustes avanzados: tema claro/oscuro, importar/exportar datos, respaldos
+1. Registro diario (diario personal con ánimo/energía/productividad)
+2. Dashboard de estadísticas con gráficos interactivos
+3. Exportación automática a Excel (.xlsx) con todas las hojas
+4. Ajustes avanzados: tema claro/oscuro, importar/exportar datos, respaldos
    automáticos, gestión de tareas fijas del checklist, atajos de teclado,
    buscador global
 

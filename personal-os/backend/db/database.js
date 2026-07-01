@@ -93,6 +93,24 @@ if (habitsCount === 0) {
   defaultHabits.forEach(([title, icon, color], i) => insert.run(title, icon, color, i));
 }
 
+// Categorías de finanzas por defecto
+const financeCatCount = db.prepare('SELECT COUNT(*) as c FROM finance_categories').get().c;
+if (financeCatCount === 0) {
+  const defaultCategories = [
+    ['Sueldo', 'ingreso', '#22c55e'],
+    ['Otros ingresos', 'ingreso', '#0ea5e9'],
+    ['Comida', 'gasto', '#f59e0b'],
+    ['Transporte', 'gasto', '#8b5cf6'],
+    ['Arriendo', 'gasto', '#ef4444'],
+    ['Entretenimiento', 'gasto', '#ec4899'],
+    ['Salud', 'gasto', '#06b6d4'],
+    ['Ahorro', 'gasto', '#22c55e'],
+    ['Otros gastos', 'gasto', '#6b7280'],
+  ];
+  const insertCat = db.prepare('INSERT INTO finance_categories (name, type, color) VALUES (?, ?, ?)');
+  defaultCategories.forEach(([name, type, color]) => insertCat.run(name, type, color));
+}
+
 // Configuración por defecto
 const settingsDefaults = {
   user_name: 'Francisco',
